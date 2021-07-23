@@ -1,0 +1,13 @@
+.vscode
+# *
+# !*.cpp
+# !*.hpp
+# !*.md
+bin/
+cmake-build-debug
+.idea
+*.o
+CMakeCache.txt
+cmake_install.cmake
+CMakeFiles
+Makefile
