@@ -3,4 +3,7 @@ project(cpp_learning)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(cpp_learning cpp_primer_5/ch01/ex1_1.cpp)
+#add_executable(cpp_learning cpp_primer_5/ch01/ex1_1.cpp)
+#add_executable(cpp_learning cpp_primer_5/ch01/ex1_2.cpp)
+#add_executable(cpp_learning cpp_primer_5/ch01/ex1_4.cpp)
+add_executable(cpp_learning cpp_primer_5/ch01/ex1_5.cpp)
