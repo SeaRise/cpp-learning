@@ -47,8 +47,7 @@ int enterAndCount() {
     return 0;
 }
 
-int main()
-{
+int main() {
     // 1.20, 1.21, 1.22
     if (enterAndSum() == -1) {
         return -1;
