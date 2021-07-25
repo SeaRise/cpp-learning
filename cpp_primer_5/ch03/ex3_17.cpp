@@ -27,6 +27,13 @@ void toupper() {
 void sum() {
     vector<int> vec;
     for (int input; cin >> input; vec.push_back(input));
+    if (vec.empty()) {
+        return;
+    }
+    if (vec.size() == 1) {
+        cout << vec[0] + vec[0] << endl;
+        return;
+    }
     auto tail = vec.size() - 1;
     decltype(vec.size()) head = 0;
     while (head <= tail) {
