@@ -12,4 +12,5 @@ set(CMAKE_CXX_STANDARD 14)
 #add_executable(cpp_learning cpp_primer_5/ch02/ex2_8.cpp)
 #add_executable(cpp_learning cpp_primer_5/ch02/ex2_42.cpp cpp_primer_5/ch02/Sales_data.h)
 
-add_executable(cpp_learning cpp_primer_5/ch03/ex3_6.cpp)
+#add_executable(cpp_learning cpp_primer_5/ch03/ex3_6.cpp)
+add_executable(cpp_learning cpp_primer_5/ch03/ex3_17.cpp)

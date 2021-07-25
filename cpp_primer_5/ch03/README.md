@@ -36,4 +36,5 @@ cout << s << endl;
         }
         ```
 - vector
-    
+    - 基本和java的list差不多吧.
+    - push_back应该是copy元素的.因为vector是紧密排列元素，而不是引用的数组？暂时猜一下.
