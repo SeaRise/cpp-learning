@@ -27,4 +27,6 @@ set(CMAKE_CXX_STANDARD 14)
 
 #add_executable(cpp_learning cpp_primer_5/ch06/ex6_7.cpp)
 #add_executable(cpp_learning cpp_primer_5/ch06/ex6_27.cpp)
-add_executable(cpp_learning cpp_primer_5/ch06/ex6_33.cpp)
+#add_executable(cpp_learning cpp_primer_5/ch06/ex6_33.cpp)
+#add_executable(cpp_learning cpp_primer_5/ch06/ex6_47.cpp)
+add_executable(cpp_learning cpp_primer_5/ch06/ex6_54.cpp)

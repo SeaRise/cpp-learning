@@ -37,3 +37,68 @@
     - 列表初始化返回值, `return {'a', 'b', 'c'}`, 和`type tmp = {'a', 'b', 'c'}`没区别.
     - 如果返回的是引用，那就是左值，否则就是右值，返回左值有`func() = value;`
     - 返回数组参数，好麻烦...先跳过.
+- 函数重载
+    - 参数不区分顶层const，但是区分底层const
+    - 不区分返回类型
+- 内联: 加关键字`inline`, `inline const string & shorterString(const string &, const string &);`
+    - 通常声明且定义在头文件
+- constexpr函数: `constexpr int new_size() {return 42; }`, 返回值，形参是字面值类型,函数体有且只有一个return.
+    - 只有当形参都是常量表达式，constexpr函数返回值才会是常量表达式.
+    - constexpr函数
+    - 通常声明且定义在头文件
+- 调试帮助
+    - `#include "cassert"`, 如果`#define NDEUG`, `assert(condition)`会生效.
+    ```
+    __(FILE/LINE/TIME/DATE)__
+    ```
+    - 用预处理的if，endif来控制debug的执行内容
+    ```
+    // NDEBUG定义要在include cassert之前.
+    #define NDEBUG
+    #include <cassert>
+  
+    #ifndef NDEBUG
+        // debug时才执行的内容
+    #endif
+    ```
+- 函数指针
+```
+// 函数声明
+boolean lengthCompare(const string &, const string &);
+// 函数指针
+boolean (*pf) (const string &, const string &);
+// 赋值
+pf = nullptr;
+pf = lengthCompare;
+pf = &lengthCompare;
+// 调用
+pf("a", "b");
+(*pf)("a", "b");
+lengthCompare("a", "b");
+// 函数指针形参
+void useBigger(const string &s1, const string &s2, boolean pf(const string &, const string &));
+void useBigger(const string &s1, const string &s2, boolean (*pf)(const string &, const string &));
+// 别名简化
+// Func和Func2是等价的函数类型
+typedef bool Func(const string &, const string &);
+typedef decltype(lengthCompare) Func2;
+// FuncP和FuncP2是等价的函数指针类型
+typedef bool (*FuncP)(const string &, const string &);
+typedef decltype(lengthCompare) *FuncP2;
+
+void useBigger(const string &s1, const string &s2, Func); // 函数类型被自动转成指针
+void useBigger(const string &s1, const string &s2, FuncP2);
+
+// 函数指针返回值
+using F = int(int *, int);
+using PF = int(*) (int *, int);
+PF f2(int);
+F *f2(int);
+decltyoe(func) *f2(int); // func是想要返回的类型的某个函数
+auto f1(int) -> int (*)(int *, int); // 尾置返回类型
+```
+- 尾置返回类型
+```
+auto func(int i) -> int(*)[10]; // 返回一个指针，指针指向一个10大小的数组，数组元素为int.
+auto f1(int) -> int (*)(int *, int); // 返回int(int *, int)的函数指针
+```
