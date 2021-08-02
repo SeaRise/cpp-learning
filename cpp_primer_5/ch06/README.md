@@ -41,7 +41,8 @@
     - 参数不区分顶层const，但是区分底层const
     - 不区分返回类型
 - 内联: 加关键字`inline`, `inline const string & shorterString(const string &, const string &);`
-    - 通常声明且定义在头文件
+    - 通常声明且定义在头文件, 最好只在定义的地方说明inline
+    - 如果声明和定义都在class/struct内部，那就是隐式内联.
 - constexpr函数: `constexpr int new_size() {return 42; }`, 返回值，形参是字面值类型,函数体有且只有一个return.
     - 只有当形参都是常量表达式，constexpr函数返回值才会是常量表达式.
     - constexpr函数

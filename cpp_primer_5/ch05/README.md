@@ -4,9 +4,9 @@
     ```
     try {
     
-    } catch (runtime_error err) {
+    } catch (const runtime_error &err) {
         // do something
-    } catch (exception err) {
+    } catch (const exception &err) {
         // do something
     }
     ```

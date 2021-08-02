@@ -29,4 +29,15 @@ set(CMAKE_CXX_STANDARD 14)
 #add_executable(cpp_learning cpp_primer_5/ch06/ex6_27.cpp)
 #add_executable(cpp_learning cpp_primer_5/ch06/ex6_33.cpp)
 #add_executable(cpp_learning cpp_primer_5/ch06/ex6_47.cpp)
-add_executable(cpp_learning cpp_primer_5/ch06/ex6_54.cpp)
+#add_executable(cpp_learning cpp_primer_5/ch06/ex6_54.cpp)
+
+add_executable(cpp_learning
+        cpp_primer_5/ch07/ex7_3.cpp
+        cpp_primer_5/ch07/Sales_data.h
+        cpp_primer_5/ch07/Person.h
+        cpp_primer_5/ch07/Screen.h
+        cpp_primer_5/ch07/Debug.h)
+#add_executable(cpp_learning
+#        cpp_primer_5/ch07/ex7_27.cpp
+#        cpp_primer_5/ch07/Screen.h)
+#add_executable(cpp_learning cpp_primer_5/ch07/ex7_31.h)
