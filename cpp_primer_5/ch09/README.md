@@ -1,0 +1,15 @@
+- 迭代器使用，一旦修改了顺序容器，就要重新获取迭代器.
+- 操作
+    - vec.assign(iter1, iter2), 拷贝[iter1, iter2)
+    - swap(vec1, vec2), 交换.
+    - push
+    - insert, 这个是返回新元素的迭代器. `iter = vec.insert(iter, 'a'');`
+    - `vec[x] / vec.at(x) / *vec.begin() / vec.front()` 都是引用，可以直接=修改vec的元素值.
+    - erase
+- string
+  - replace
+  - find
+  - 数值转换： `string s = to_string(i); double d = stod(s)`等等.
+    - `sto<type>`, 如`stoi, stod, stof`等等.
+- 容器适配器
+  - `stack, queue, priority_queue`
