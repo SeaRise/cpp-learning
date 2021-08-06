@@ -40,7 +40,7 @@ vector<string> &readWords(vector<string> &vec, const string &file) {
 
 int main() {
     vector<string> vec;
-    string file("./cpp_primer_5/data/input.txt");
+    string file("../cpp_primer_5/data/input.txt");
 
     // 8.4
     for (const auto &line : readLines(vec, file)) {
