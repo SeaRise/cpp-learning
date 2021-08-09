@@ -35,10 +35,10 @@ auto it = back_inserter(vec);
 对func(a1, a2, a3, a4, a5)
 using namespace std::placeholders;
 值绑定
-auto g = func(f, a, b, std::placeholders::_1, c, _2)
+auto g = bind(f, a, b, std::placeholders::_1, c, _2)
 引用绑定
 #include <functional>
-auto g = func(f, std::ref(a), std::ref(b), _1, std::cref(c), _2)
+auto g = bind(f, std::ref(a), std::ref(b), _1, std::cref(c), _2)
 ```
 - 判读奇数: `i & 0x1`
 - 插入迭代器
