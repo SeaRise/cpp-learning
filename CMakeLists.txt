@@ -60,4 +60,6 @@ set(CMAKE_CXX_STANDARD 14)
 #add_executable(cpp_learning cpp_primer_5/ch12/ex12_2.cpp cpp_primer_5/ch12/StrBlob.cpp cpp_primer_5/ch12/StrBlob.h)
 #add_executable(cpp_learning cpp_primer_5/ch12/ex12_6.cpp)
 #add_executable(cpp_learning cpp_primer_5/ch12/ex12_20.cpp cpp_primer_5/ch12/StrBlob.cpp cpp_primer_5/ch12/StrBlob.h)
-add_executable(cpp_learning cpp_primer_5/ch12/ex12_26.cpp)
+#add_executable(cpp_learning cpp_primer_5/ch12/ex12_26.cpp)
+
+add_executable(cpp_learning cpp_primer_5/ch14/ex14_44.cpp)

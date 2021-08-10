@@ -21,7 +21,7 @@ set<A>::key_type / value_type = A
   - `[x]`, 类似getOrCreate, 如果找不到会对value做值初始化
   - `[x] = y`, insertOrUpdate.
   - `at(x)`, 找不到报错.
-  - find, 找存在否.
+  - find, 找存在否.和[]类似，不过不会create，用find(x) != map.end()来判断是否找到.
   - count， 计数.
   - 范围查找: `lower_bound, upper_bound, equal_range`
 - 无序(hash)容器特有操作

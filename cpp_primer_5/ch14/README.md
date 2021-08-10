@@ -52,10 +52,19 @@
     // ->必须返回指针，或者重载了->
     //     (*point).xxx
     //     point.operator->()->xxx
-    type* operator->() const;
+    type* operator->() const { return &(this->operator*()); };
   
     // 重载函数调用，可以有var(args).重载了()的对象称作函数对象.
     type operator()(args);
     ```
 - 函数对象
-    - lambda本身是函数对象.
+    - lambda本身是函数对象.见ch10
+    - 标准库定义的函数对象.`#include functional`, 见510页.
+- function, 可以指向 lambda, 函数指针，函数对象.
+    - 见ex14_44.cpp
+- 重载类型转换
+    - 通常只会重载bool().
+```
+operator type() const; // 讲*this转为type类型
+explicit operator type() const; // 禁用隐式转换, 不过在if, while, for, ?:, ||, !, &&这里地方，还是会隐式转换，也就是bool的使用场景.
+```
