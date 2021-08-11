@@ -14,10 +14,12 @@ double print_total(std::ostream &os, const Quote &item, size_t n) {
     os << "ISBN: " << item.isbn()
        << " # sold: " << n << " total due: "
        << ret << endl;
+    item.debug(os);
+    os << "\n" << endl;
     return ret;
 }
-
-// 15.2, 15.5, 15.6, 15.7
+;
+// 15.2, 15.5, 15.6, 15.7, 15.11
 int main() {
     Quote q("textbook", 10.60);
     Bulk_quote bq("textbook", 10.60, 10, 0.3);

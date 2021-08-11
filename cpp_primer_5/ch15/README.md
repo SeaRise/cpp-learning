@@ -6,6 +6,8 @@
 class base {
 public:
     base(type v);
+    // 只有virtual函数才能被继承类覆盖，也只有virtual函数才会在运行时绑定实现，其他的都是编译时知道.
+    // virtual函数的默认实参由引用/指针的类型决定...
     virtual type func1(args);
     virtual type func2(args);
     virtual ~base() = default; // 通常有个虚析构函数.
@@ -25,4 +27,12 @@ public:
 ```
 class c final
 type func() final
+```
+- 抽象基类，包含纯虚函数的类就是抽象基类，不可实例化
+```
+class obj {
+public:
+    // = 0定义纯虚函数
+    virtual type func(args) = 0;
+}
 ```

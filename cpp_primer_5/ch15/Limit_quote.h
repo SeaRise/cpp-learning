@@ -17,6 +17,10 @@ public:
         double discBasePrice = Quote::net_price(discN);
         return overPrice + discBasePrice * (1 - discount);
     }
+    std::ostream &debug(std::ostream &os) const override {
+        Quote::debug(os) << ", limit: " << limit << ", discount: " << discount;
+        return os;
+    }
 private:
     std::size_t limit = 0;
     double discount = 0.0;

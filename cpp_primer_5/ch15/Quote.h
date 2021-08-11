@@ -2,6 +2,7 @@
 #define CPP_LEARNING_QUOTE_H
 
 #include <utility>
+#include <iostream>
 #include <string>
 
 class Quote {
@@ -12,6 +13,10 @@ public:
         bookNo(std::move(book)), price(sales_price) {}
     std::string isbn() const { return bookNo; }
     virtual double net_price(std::size_t n) const { return n * price; }
+    virtual std::ostream &debug(std::ostream &os) const {
+        os << "bookNo: " << bookNo << ", price: " << price;
+        return os;
+    }
     ~Quote() = default;
 private:
     std::string bookNo;
