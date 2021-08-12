@@ -8,6 +8,8 @@
 class Quote {
 public:
     Quote() = default;
+    Quote(const Quote &q) = default;
+    Quote(Quote &&q) = default;
     // 这里如果传给book的是，右值引用，那么有string book(std::move(input)), 事实上触发的是string的移动构造函数, 没有发生拷贝.
     Quote(std::string book, double sales_price) :
         bookNo(std::move(book)), price(sales_price) {}
@@ -17,6 +19,8 @@ public:
         os << "bookNo: " << bookNo << ", price: " << price;
         return os;
     }
+    virtual Quote *clone() const & { return new Quote(*this); }
+    virtual Quote *clone() && { return new Quote(std::move(*this)); }
     ~Quote() = default;
 private:
     std::string bookNo;

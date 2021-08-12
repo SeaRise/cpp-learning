@@ -14,6 +14,8 @@ public:
         double basePrice = Quote::net_price(n);
         return n >= min_qty ? (1 - discount) * basePrice : basePrice;
     }
+    Quote *clone() const & override { return new Bulk_quote(*this); }
+    Quote *clone() && override { return new Bulk_quote(std::move(*this)); }
 private:
     std::size_t min_qty = 0;
     double discount = 0.0;

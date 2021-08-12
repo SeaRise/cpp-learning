@@ -21,6 +21,8 @@ public:
         Quote::debug(os) << ", limit: " << limit << ", discount: " << discount;
         return os;
     }
+    Quote *clone() const & override { return new Limit_quote(*this); }
+    Quote *clone() && override { return new Limit_quote(std::move(*this)); }
 private:
     std::size_t limit = 0;
     double discount = 0.0;

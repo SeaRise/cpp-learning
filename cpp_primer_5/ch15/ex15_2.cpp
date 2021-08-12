@@ -18,7 +18,7 @@ double print_total(std::ostream &os, const Quote &item, size_t n) {
     os << "\n" << endl;
     return ret;
 }
-;
+
 // 15.2, 15.5, 15.6, 15.7, 15.11
 int main() {
     Quote q("textbook", 10.60);

@@ -64,8 +64,13 @@ set(CMAKE_CXX_STANDARD 14)
 
 #add_executable(cpp_learning cpp_primer_5/ch14/ex14_44.cpp)
 
+#add_executable(cpp_learning
+#        cpp_primer_5/ch15/ex15_2.cpp
+#        cpp_primer_5/ch15/Quote.h
+#        cpp_primer_5/ch15/Bulk_quote.h
+#        cpp_primer_5/ch15/Limit_quote.h)
 add_executable(cpp_learning
-        cpp_primer_5/ch15/ex15_2.cpp
+        cpp_primer_5/ch15/ex15_29.cpp
         cpp_primer_5/ch15/Quote.h
         cpp_primer_5/ch15/Bulk_quote.h
-        cpp_primer_5/ch15/Limit_quote.h)
+        cpp_primer_5/ch15/Limit_quote.h cpp_primer_5/ch15/Basket.h)
