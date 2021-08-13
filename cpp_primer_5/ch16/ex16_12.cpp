@@ -16,7 +16,7 @@ int main() {
     if (ifs) {
         Blob<string> blob;
         for (std::string str; std::getline(ifs, str); blob.push_back(str));
-        for (auto pbeg = blob.begin(), pend = blob.end(); !pbeg.equalsTo(pend); ++pbeg) {
+        for (auto pbeg = blob.begin(), pend = blob.end(); pbeg != pend; ++pbeg) {
             std::cout << *pbeg << std::endl;
         }
     } else {

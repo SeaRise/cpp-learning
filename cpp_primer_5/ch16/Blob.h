@@ -71,12 +71,23 @@ private:
 
 template<typename T>
 bool operator==(const BlobPtr<T> &lhs, const BlobPtr<T> &rhs) {
-    return 0;
+    if (lhs.curr != rhs.curr) {
+        return false;
+    }
+    auto ptr = lhs.wptr.lock();
+    auto otherPtr = rhs.wptr.lock();
+    if (ptr && otherPtr) {
+        return ptr.get() == otherPtr.get();
+    } else if (!ptr && !otherPtr) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 template<typename T>
 bool operator!=(const BlobPtr<T> &lhs, const BlobPtr<T> &rhs) {
-    return 0;
+    return !(lhs == rhs);
 }
 
 template<typename T>
