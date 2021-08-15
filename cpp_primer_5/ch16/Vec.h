@@ -34,8 +34,8 @@ private:
 template<typename T>
 Vec<T>::Vec(const Vec &vec) {
     auto new_data = alloc_n_copy(vec.begin(), vec.end());
-    this->elements = new_data.first;
-    this->first_free = this->cap = new_data.second;
+    elements = new_data.first;
+    first_free = cap = new_data.second;
 }
 
 template<typename T>
@@ -47,15 +47,15 @@ template<typename T>
 Vec<T> &Vec<T>::operator=(const Vec &vec) {
     auto new_data = alloc_n_copy(vec.begin(), vec.end());
     free();
-    this->elements = new_data.first;
-    this->first_free = this->cap = new_data.second;
+    elements = new_data.first;
+    first_free = cap = new_data.second;
     return *this;
 }
 
 template<typename T>
 void Vec<T>::push_back(const T &t) {
     chk_n_alloc();
-    alloc.construct(this->first_free++, t);
+    alloc.construct(first_free++, t);
 }
 
 template<typename T>
@@ -66,11 +66,11 @@ std::pair<T *, T *> Vec<T>::alloc_n_copy(const T *t1, const T *t2) {
 
 template<typename T>
 void Vec<T>::free() {
-    if (this->elements) {
-        for (auto p = this->first_free; p != this->elements; ) {
+    if (elements) {
+        for (auto p = first_free; p != elements; ) {
             alloc.destroy(--p);
         }
-        alloc.deallocate(this->elements, this->cap - this->elements);
+        alloc.deallocate(elements, cap - elements);
     }
 }
 
@@ -79,20 +79,20 @@ void Vec<T>::reallocate() {
     auto new_capacity = size() ? 2 * size() : 1;
     auto new_data = alloc.allocate(new_capacity);
     auto dest = new_data;
-    auto elem = this->elements;
+    auto elem = elements;
     for (int i = 0; i != size(); ++i) {
         alloc.construct(dest++, std::move(*elem++));
     }
     free();
-    this->elements = new_data;
-    this->first_free = dest;
-    this->cap = this->elements + new_capacity;
+    elements = new_data;
+    first_free = dest;
+    cap = elements + new_capacity;
 }
 
 template<typename T>
 void Vec<T>::push_back(const T &&t) {
     chk_n_alloc();
-    alloc.construct(this->first_free++, std::move(t));
+    alloc.construct(first_free++, std::move(t));
 }
 
 #endif //CPP_LEARNING_VEC_H

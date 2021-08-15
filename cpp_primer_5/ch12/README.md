@@ -26,21 +26,21 @@
     - 内部结构: 计数器本身是new的，然后shared_ptr持有计数器的指针和type的指针.
     ```
     shared_ptr {
-        int *count = new int(0);
+        int *counter = new int(0);
         type ptr = nullptr;
     }
     ```
     - 当p = q时， 重写了=操作符
     ```
-    --(*(p.count));
-    ++(*(q.count));
-    p.count = q.count;
+    --(*(p.counter));
+    ++(*(q.counter));
+    p.counter = q.counter;
     p.ptr = q.ptr;
     ```
     - shared_ptr<type> p(q);
     ```
-    ++(*(q.count));
-    p.count = q.count;
+    ++(*(q.counter));
+    p.counter = q.counter;
     p.ptr = q.ptr;
     ```
 

@@ -22,6 +22,7 @@ public:
     typedef typename std::vector<T>::size_type size_type;
     Blob(): data(std::make_shared<std::vector<T>>()) {}
     Blob(std::initializer_list<T> il) : data(il) {}
+    template<typename It> Blob(const It &, const It &);
     size_type size() const { return data->size(); }
     bool empty() const { return data->empty(); }
     BlobPtr<T> begin() { return BlobPtr<T>(*this); }
@@ -158,6 +159,14 @@ template<typename T>
 const T &Blob<T>::operator[](Blob::size_type i) const {
     check(i, "subscript out of range");
     return (*data)[i];
+}
+
+template<typename T>
+template<typename It>
+Blob<T>::Blob(const It &begin, const It &end): data(std::make_shared<std::vector<T>>()) {
+    for (It iter = begin; iter != end; ++iter) {
+        data->push_back(*iter);
+    }
 }
 
 #endif //CPP_LEARNING_BLOB_H

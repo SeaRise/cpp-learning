@@ -19,6 +19,10 @@ int main() {
         for (auto pbeg = blob.begin(), pend = blob.end(); pbeg != pend; ++pbeg) {
             std::cout << *pbeg << std::endl;
         }
+        Blob<string> blob2(blob.begin(), blob.end());
+        for (const auto &item : blob2) {
+            cout << item << endl;
+        }
     } else {
         cerr << "no open file: " << file << endl;
     }

@@ -77,6 +77,8 @@ set(CMAKE_CXX_STANDARD 14)
 
 #add_executable(cpp_learning cpp_primer_5/ch16/ex16_2.cpp)
 #add_executable(cpp_learning cpp_primer_5/ch16/ex16_12.cpp cpp_primer_5/ch16/Blob.h)
-add_executable(cpp_learning
-        cpp_primer_5/ch16/ex16_16.cpp
-        cpp_primer_5/ch16/Vec.h)
+#add_executable(cpp_learning
+#        cpp_primer_5/ch16/ex16_16.cpp
+#        cpp_primer_5/ch16/Vec.h)
+#add_executable(cpp_learning cpp_primer_5/ch16/ex16_19.cpp cpp_primer_5/ch16/DebugDelete.h)
+add_executable(cpp_learning cpp_primer_5/ch16/ex16_28.cpp cpp_primer_5/ch16/my_ptr.h)
