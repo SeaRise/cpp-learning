@@ -46,7 +46,7 @@ namespace ch16_5_6 {
 
 namespace ch16_7 {
     template<std::size_t N, typename Value>
-    inline std::size_t size(Value (&array)[N]) { return N; }
+    constexpr inline std::size_t size(Value (&array)[N]) { return N; }
 }
 
 int main() {
