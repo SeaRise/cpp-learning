@@ -84,4 +84,8 @@ set(CMAKE_CXX_STANDARD 14)
 #add_executable(cpp_learning cpp_primer_5/ch16/ex16_28.cpp cpp_primer_5/ch16/my_ptr.h)
 #add_executable(cpp_learning cpp_primer_5/ch16/ex16_51.cpp)
 
-add_executable(cpp_learning cpp_primer_5/ch19/ex19_1.cpp)
+#add_executable(cpp_learning cpp_primer_5/ch19/ex19_1.cpp)
+add_executable(cpp_learning
+        cpp_primer_5/ch19/ex19_21.cpp
+        cpp_primer_5/ch19/Token.cpp
+        cpp_primer_5/ch19/Token.h)
